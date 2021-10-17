@@ -1,6 +1,6 @@
+<!-- svelte-ignore missing-declaration -->
 <script lang="ts">
-  import { writable } from "svelte/store";
-  let current = "main";
+  import { page } from "./stores.js";
 </script>
 
 <div class="container">
@@ -9,38 +9,20 @@
     <div class="arrow menu-item item">→</div>
     <div class="list menu-item item">
       <ul
-        class={current === "main"
+        class={$page === 0
           ? "main"
-          : current === "about"
+          : $page === 1
           ? "about"
-          : current === "projects"
+          : $page === 2
           ? "projects"
           : "work"}
       >
-        <li
-          on:click={() => (current = "main")}
-          class={current === "main" ? "active" : ""}
-        >
-          ●
-        </li>
-        <li
-          on:click={() => (current = "about")}
-          class={current === "about" ? "active" : ""}
-        >
-          About
-        </li>
-        <li
-          on:click={() => (current = "projects")}
-          class={current === "projects" ? "active" : ""}
-        >
+        <li on:click={page.main} class={$page == 0 ? "active" : ""}>●</li>
+        <li on:click={page.about} class={$page === 1 ? "active" : ""}>About</li>
+        <li on:click={page.projects} class={$page === 2 ? "active" : ""}>
           Projects
         </li>
-        <li
-          on:click={() => (current = "work")}
-          class={current === "work" ? "active" : ""}
-        >
-          Work
-        </li>
+        <li on:click={page.work} class={$page === 3 ? "active" : ""}>Work</li>
       </ul>
     </div>
   </div>
@@ -80,11 +62,23 @@
   ul {
     list-style-type: none;
     line-height: 26px;
-    margin-left: 14px;
+    margin-left: 16px;
     padding-left: 0;
     color: #bababa;
+    transition-property: padding-top, padding-bottom;
+    transition-duration: 0.5s;
   }
+
+  li:hover,
+  li:active {
+    width: min-content;
+    background-color: #fbfbfb;
+    transition: 0.2s;
+  }
+
   li {
+    border-radius: 4px;
+    padding: 0 8px 0 8px;
     cursor: pointer;
   }
   .active {

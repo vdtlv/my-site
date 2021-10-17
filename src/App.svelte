@@ -1,20 +1,28 @@
 <script>
   import Nav from "./Components/nav.svelte";
+  import Main from "./Components/mainpage.svelte";
+  import About from "./Components/about.svelte";
+  import Projects from "./Components/projects.svelte";
+  import Work from "./Components/work.svelte";
+  import { page } from "./Components/stores.js";
 </script>
 
 <main>
   <Nav />
-  <h1>Hello man!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
+  {#if !$page}
+    <Main />
+  {:else if $page == 1}
+    <About />
+  {:else if $page == 2}
+    <Projects />
+  {:else if $page == 3}
+    <Work />
+  {/if}
 </main>
 
 <style>
   main {
     padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
   }
 
