@@ -11,7 +11,16 @@
 </div>
 
 <style>
+  :global(body.projects) {
+    --bg-color: #222;
+    --hover: #2d2d2d;
+    --text-color: #fff;
+    --default: #808080;
+    /*transition: background-color 0.3s;*/
+  }
+
   .main {
+    color: var(--text-color);
     padding: 1em;
     margin: 0 auto;
   }

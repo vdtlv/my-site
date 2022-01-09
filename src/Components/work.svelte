@@ -16,9 +16,27 @@
 </div>
 
 <style>
+  :global(body.work) {
+    --bg-color: #1544bb;
+    --hover: #2c57c2;
+    --text-color: #fff;
+    --default: #a8bef5;
+    /*transition: background-color 0.3s;*/
+  }
+
   .main {
+    color: var(--text-color);
     padding: 1em;
     margin: 0 auto;
+  }
+
+  a {
+    color: var(--text-color);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: var(--default);
+    transition: color 0.3s;
   }
 
   @media (min-width: 640px) {

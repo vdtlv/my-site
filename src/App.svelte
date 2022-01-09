@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import { onMount } from "svelte";
   import Router, { location, link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
   import Main from "./Components/mainpage.svelte";
@@ -6,16 +7,68 @@
   import Projects from "./Components/projects.svelte";
   import Work from "./Components/work.svelte";
   import { page } from "./Components/stores.js";
+  import url from "./url";
+
+  function c() {
+    setTimeout(() => {
+      if ($url.hash == "#/") {
+        console.log("not about", $location, $url.hash);
+        window.document.body.classList.add("home");
+        window.document.body.classList.remove("about");
+        window.document.body.classList.remove("projects");
+        window.document.body.classList.remove("work");
+      }
+      if ($url.hash == "#/about") {
+        console.log(" about", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("projects");
+        window.document.body.classList.remove("work");
+        window.document.body.classList.add("about");
+      }
+      if ($url.hash == "#/projects") {
+        console.log("projects", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("about");
+        window.document.body.classList.remove("work");
+        window.document.body.classList.add("projects");
+      }
+      if ($url.hash == "#/work") {
+        console.log("work", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("about");
+        window.document.body.classList.remove("projects");
+        window.document.body.classList.add("work");
+      }
+    }, 10);
+  }
+  onMount(() => {
+    console.log("onmount", $location, $url.hash);
+    if ($url.hash === "#/") {
+      console.log("not about", $location, $url.hash);
+      window.document.body.classList.toggle("home");
+    }
+    if ($url.hash == "#/about") {
+      console.log(" about", $location, $url.hash);
+      window.document.body.classList.toggle("about");
+    }
+    if ($url.hash == "#/projects") {
+      console.log(" about", $location, $url.hash);
+      window.document.body.classList.toggle("projects");
+    }
+    if ($url.hash == "#/work") {
+      console.log(" work", $location, $url.hash);
+      window.document.body.classList.toggle("work");
+    }
+  });
 </script>
 
 <main>
   <div class="container">
-    <div class="item title">
-      VDTLV <span class="location">{$location}</span>
-    </div>
+    <div class="item title">VDTLV</div>
     <div class="item menu">
       <div class="item arrow">→</div>
       <nav>
+        <!--classes for menu-->
         <ul
           class={$location === "/"
             ? "home"
@@ -30,28 +83,23 @@
           <li>
             <a
               href="/"
+              on:click={c}
               use:link
-              use:active={{
-                path: "/",
-                className: "home",
-                inactiveClassName: "inactive",
-              }}>●</a
+              class={$location === "/" ? "m" : "inactive"}>●</a
             >
           </li>
           <li>
             <a
               href="/about"
+              on:click={c}
               use:link
-              use:active={{
-                path: "/about",
-                className: "about",
-                inactiveClassName: "inactive",
-              }}>About</a
+              class={$location === "/about" ? "" : "inactive"}>About</a
             >
           </li>
           <li>
             <a
               href="/projects"
+              on:click={c}
               use:link
               use:active={{
                 path: "/projects",
@@ -63,6 +111,7 @@
           <li>
             <a
               href="/work"
+              on:click={c}
               use:link
               use:active={{
                 path: "/work",
@@ -87,6 +136,51 @@
 />
 
 <style>
+  :root {
+    --bg-color: #fff;
+    --hover: #f2f2f2;
+    --text-color: #222;
+    --default: #bababa;
+    --accent: rgb(240, 108, 0);
+    /*transition: background-color 0.3s;*/
+  }
+
+  :global(body.about) {
+    --bg-color: #ffe24a;
+    --hover: #f2d746;
+    --text-color: #222;
+    --default: #fff;
+    --accent: #ffe24a;
+    /*transition: background-color 0.3s;*/
+  }
+
+  :global(body.projects) {
+    --bg-color: #222;
+    --hover: #2d2d2d;
+    --text-color: #fff;
+    --default: #808080;
+    --accent: #222;
+    /*transition: background-color 0.3s;*/
+  }
+  :global(body.work) {
+    --bg-color: #1544bb;
+    --hover: #2c57c2;
+    --text-color: #fff;
+    --default: #a8bef5;
+    --accent: #1544bb;
+    /*transition: background-color 0.3s;*/
+  }
+
+  :global(body) {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s;
+  }
+
+  .inactive {
+    color: var(--default);
+    transition: background-color 0.3s;
+  }
+
   main {
     padding: 1em;
     margin: 0 auto;
@@ -106,6 +200,7 @@
     align-content: center;
   }
   .item {
+    color: var(--text-color);
     align-self: center;
     font-weight: bold;
     font-size: 16px;
@@ -114,8 +209,8 @@
   .title {
     width: 50%;
   }
-  .location {
-    color: rgba(77, 77, 77, 0.021);
+  .m {
+    color: var(--accent);
   }
   .menu {
     height: 100px;
@@ -136,17 +231,21 @@
     list-style-type: none;
   }
   a {
+    color: var(--text-color);
     list-style-type: none;
     line-height: 26px;
     border-radius: 4px;
-    padding: 0 8px 0 8px;
+    padding: 2px 8px;
   }
   a:hover {
     text-decoration: none;
     width: min-content;
-    background-color: #fbfbfb;
+    background-color: var(--hover);
     transition: 0.2s;
     cursor: pointer;
+  }
+  a:visited {
+    text-decoration: none;
   }
 
   nav {
@@ -165,19 +264,5 @@
   }
   .work {
     margin-top: -41px;
-  }
-
-  :global(a.work) {
-    color: #1544bb;
-  }
-
-  :global(a.about, a.projects) {
-    color: #222;
-  }
-  :global(a.home) {
-    color: #ffd80d;
-  }
-  :global(a.inactive) {
-    color: #bababa;
   }
 </style>
