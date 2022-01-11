@@ -1,14 +1,29 @@
 <script>
   import { fade, fly } from "svelte/transition";
   import SocialButton from "./socialButton.svelte";
+
+  function preload(src) {
+    return new Promise(function (resolve) {
+      let img = new Image();
+      img.onload = resolve;
+      img.src = src;
+    });
+  }
+
   let src = "Images/vdtlv.jpg";
   let socials = [
-    { buttonLink: "https://dribbble.com/vdtlv", buttonText: "Dribbble @vdtlv" },
-    { buttonLink: "https://github.com/vdtlv", buttonText: "Github /vdtlv" },
-    { buttonLink: "https://t.me/vdtlv", buttonText: "Telegram @vdtlv" },
+    {
+      buttonLink: "https://dribbble.com/vdtlv",
+      buttonText: "<b>Dribbble</b> @vdtlv",
+    },
+    {
+      buttonLink: "https://github.com/vdtlv",
+      buttonText: "<b>Github</b> /vdtlv",
+    },
+    { buttonLink: "https://t.me/vdtlv", buttonText: "<b>Telegram</b> @vdtlv" },
     {
       buttonLink: "https://www.instagram.com/vdtlv/",
-      buttonText: "Instagram @vdtlv",
+      buttonText: "<b>Instagram</b> @vdtlv",
     },
   ];
 </script>
@@ -23,7 +38,10 @@
     <p>for sure i dont really</p>
   </div>
   <div class="info">
-    <img {src} alt="That's me" />
+    {#await preload(src) then _}
+      <img {src} in:fly alt="I am Slava, that's me" />
+    {/await}
+
     <div class="socials">
       {#each socials as social}
         <SocialButton link={social.buttonLink} txt={social.buttonText} />
@@ -47,7 +65,7 @@
   }
 
   .content {
-    width: 512px;
+    width: 100%;
     flex-grow: 2;
   }
   .info {
@@ -66,6 +84,10 @@
     .main {
       max-width: 768px;
       flex-direction: row;
+    }
+    .content {
+      width: 512px;
+      flex-grow: 2;
     }
   }
 </style>

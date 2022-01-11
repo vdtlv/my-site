@@ -3,15 +3,15 @@
   export let txt;
 </script>
 
-<a href={link}>{txt}</a>
+<a href={link}>{@html txt}</a>
 
 <style>
   a {
-    margin-top: 0.2em;
+    margin-top: 0.3em;
     width: fit-content;
     margin-left: -2px;
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 400;
     color: var(--text-color);
     border-radius: 4px;
     padding: 4px;
