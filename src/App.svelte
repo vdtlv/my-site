@@ -6,7 +6,7 @@
   import About from "./Components/about.svelte";
   import Projects from "./Components/projects.svelte";
   import Work from "./Components/work.svelte";
-  import { page } from "./Components/stores.js";
+  // import { page } from "./Components/stores.js";
   import url from "./url";
 
   function c() {
@@ -232,7 +232,6 @@
   }
   a {
     color: var(--text-color);
-    list-style-type: none;
     line-height: 26px;
     border-radius: 4px;
     padding: 2px 8px;
