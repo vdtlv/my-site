@@ -76,12 +76,19 @@
     flex-direction: column;
   }
   @media (min-width: 640px) {
+    .main {
+      overflow-y: hidden;
+    }
+  }
+
+  @media (min-width: 640px) {
     img {
       width: 256px;
       height: auto;
       border-radius: 8px;
     }
     .main {
+      display: flex;
       max-width: 768px;
       flex-direction: row;
     }

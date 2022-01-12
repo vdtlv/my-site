@@ -9,12 +9,12 @@
   a {
     margin-top: 0.3em;
     width: fit-content;
-    margin-left: -2px;
+    margin-left: -3px;
     font-size: 1em;
     font-weight: 400;
     color: var(--text-color);
     border-radius: 4px;
-    padding: 4px;
+    padding: 4px 6px;
   }
   a:hover {
     text-decoration: none;
