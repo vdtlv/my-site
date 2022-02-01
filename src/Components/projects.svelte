@@ -20,7 +20,7 @@
     height: calc(100vh - 248px);
     color: #4d4d4d;
     margin: 0px 16px;
-    
+    height: -webkit-fill-available;
   }
   
   a {
