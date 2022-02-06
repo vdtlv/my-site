@@ -4,6 +4,7 @@
 
 <div
   class="main"
+  style="height: calc(100% - 212px);"
   in:fly={{ y: 20, duration: 200, delay: 200 }}
   out:fade={{ duration: 200 }}
 >
@@ -17,7 +18,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: calc(100vh - 248px);
     color: #4d4d4d;
     margin: 0px 16px;
     height: -webkit-fill-available;

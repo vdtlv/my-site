@@ -34,8 +34,23 @@
   out:fade={{ duration: 200 }}
 >
   <div class="content">
-    <h2>I like playing with svelte</h2>
-    <p>for sure i dont really</p>
+    <h2>My name is Viacheslav Diatlov (he/him), living in 
+      Saint-Petersburg. I am working as UI/UX Designer and 
+      do programming in my spare time. </h2>
+    <h3><br>Design</h3>
+    <p>An attractive user interface is just a tip of the iceberg. 
+      I enjoy working on design systems, develop and improve them. 
+      Figma, Blender and Procreate are exceptional until you get 
+      unexpected challenges. I am trying to bypass Adobe tools 
+      and this is the reason I always searching for new powerful 
+      services which can close all my needs. There are so many 
+      great tools for interface design or 2D/3D graphics.</p>
+    <h3><br>Code</h3>
+    <p>I am keen on programming, web things are pretty ok for me, 
+      <i>especially, with YouTube and StackOverflow</i>. I 
+      develop simple web services for my daily routine but I still working
+      on my skills for making things that need to reach a wide audience.
+      As for today, I like playing with Svelte and trying to learn Swift.</p>
   </div>
   <div class="info">
     {#await preload(src) then _}
@@ -47,15 +62,22 @@
         <SocialButton link={social.buttonLink} txt={social.buttonText} />
       {/each}
     </div>
+    <br>
   </div>
 </div>
 
 <style>
   img {
     width: 100%;
-    height: auto;
-    border-radius: 16px;
+    height: 100%;
+    border-radius: 32px;
   }
+
+  h2 {
+    font-weight: 600;
+    line-height: 135%;
+  }
+
 
   .main {
     display: flex;
@@ -70,6 +92,8 @@
   }
   .info {
     flex-grow: 1;
+    border-style: none none solid none;
+    border-color: var(--text-color); 
   }
   .socials {
     display: flex;
@@ -85,15 +109,19 @@
     img {
       width: 256px;
       height: auto;
-      border-radius: 8px;
+      border-radius: 16px;
     }
     .main {
       display: flex;
       max-width: 768px;
       flex-direction: row;
     }
+    .info {
+    border-style: none ;
+    }
     .content {
-      width: 512px;
+      margin-right: 32px;
+      width: 480px;
       flex-grow: 2;
     }
   }
