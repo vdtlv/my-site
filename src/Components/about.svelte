@@ -69,7 +69,7 @@
 <style>
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 32px;
   }
 
@@ -108,7 +108,7 @@
   @media (min-width: 640px) {
     img {
       width: 256px;
-      height: auto;
+      height: 256px;
       border-radius: 16px;
     }
     .main {
