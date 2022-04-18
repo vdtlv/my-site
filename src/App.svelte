@@ -1,68 +1,74 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Router, { location, link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
   import Main from "./Components/mainpage.svelte";
   import About from "./Components/about.svelte";
   import Projects from "./Components/projects.svelte";
   import Work from "./Components/work.svelte";
-  // import { page } from "./Components/stores.js";
   import url from "./url";
+import Rocketlanch from "./Components/rocketlanch.svelte";
 
-  function c() {
-    setTimeout(() => {
-      if ($url.hash == "#/") {
+function routeLoading(event) {
+    console.log('routeLoading event')
+    console.log('Route', event.detail.route)
+    console.log('Location', event.detail.location)
+    console.log('Querystring', event.detail.querystring)
+    console.log('User data', event.detail.userData)
+    if (event.detail.location == "/about") {
+      window.document.body.classList.toggle("about");
+    }
+    if (event.detail.location == "/projects") {
+      window.document.body.classList.toggle("projects");
+    }
+    if (event.detail.location == "/work") {
+      window.document.body.classList.toggle("work");
+    } else {
+      window.document.body.classList.toggle("home");
+    }
+}
+
+function routeLoaded(event) {
+    console.log('routeLoaded event')
+    // The first 5 properties are the same as for the routeLoading event
+    console.log('Route', event.detail.route)
+    console.log('Location', event.detail.location)
+    console.log('Querystring', event.detail.querystring)
+    console.log('Params', event.detail.params)
+    console.log('User data', event.detail.userData)
+    // The last two properties are unique to routeLoaded
+    console.log('Component', event.detail.component) // This is a Svelte component, so a function
+    console.log('Name', event.detail.name)
+      if ($url.hash === "#/about") {
+        console.log(" about", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("projects");
+        window.document.body.classList.remove("work");
+        window.document.body.classList.add("about");
+      } else if ($url.hash === "#/projects") {
+        console.log("projects", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("about");
+        window.document.body.classList.remove("work");
+        window.document.body.classList.add("projects");
+      } else if ($url.hash === "#/work") {
+        console.log("work", $location, $url.hash);
+        window.document.body.classList.remove("home");
+        window.document.body.classList.remove("about");
+        window.document.body.classList.remove("projects");
+        window.document.body.classList.add("work");
+      } else {
         console.log("not about", $location, $url.hash);
         window.document.body.classList.add("home");
         window.document.body.classList.remove("about");
         window.document.body.classList.remove("projects");
         window.document.body.classList.remove("work");
       }
-      if ($url.hash == "#/about") {
-        console.log(" about", $location, $url.hash);
-        window.document.body.classList.remove("home");
-        window.document.body.classList.remove("projects");
-        window.document.body.classList.remove("work");
-        window.document.body.classList.add("about");
-      }
-      if ($url.hash == "#/projects") {
-        console.log("projects", $location, $url.hash);
-        window.document.body.classList.remove("home");
-        window.document.body.classList.remove("about");
-        window.document.body.classList.remove("work");
-        window.document.body.classList.add("projects");
-      }
-      if ($url.hash == "#/work") {
-        console.log("work", $location, $url.hash);
-        window.document.body.classList.remove("home");
-        window.document.body.classList.remove("about");
-        window.document.body.classList.remove("projects");
-        window.document.body.classList.add("work");
-      }
-    }, 10);
-  }
-  onMount(() => {
-    console.log("onmount", $location, $url.hash);
-    if ($url.hash === "#/") {
-      console.log("not about", $location, $url.hash);
-      window.document.body.classList.toggle("home");
-    }
-    if ($url.hash == "#/about") {
-      console.log(" about", $location, $url.hash);
-      window.document.body.classList.toggle("about");
-    }
-    if ($url.hash == "#/projects") {
-      console.log(" about", $location, $url.hash);
-      window.document.body.classList.toggle("projects");
-    }
-    if ($url.hash == "#/work") {
-      console.log(" work", $location, $url.hash);
-      window.document.body.classList.toggle("work");
-    }
-  });
+}
+
 </script>
 
 <main>
+  {#if $location === "/" || $location === "/about" || $location === "/projects" || $location === "/work"}
   <div class="container">
     <div class="item title">VDTLV</div>
     <div class="item menu">
@@ -83,7 +89,6 @@
           <li>
             <a
               href="/"
-              on:click={c}
               use:link
               class={$location === "/" ? "m" : "inactive"}>●</a
             >
@@ -91,7 +96,7 @@
           <li>
             <a
               href="/about"
-              on:click={c}
+
               use:link
               class={$location === "/about" ? "" : "inactive"}>About</a
             >
@@ -99,7 +104,6 @@
           <li>
             <a
               href="/projects"
-              on:click={c}
               use:link
               use:active={{
                 path: "/projects",
@@ -111,7 +115,6 @@
           <li>
             <a
               href="/work"
-              on:click={c}
               use:link
               use:active={{
                 path: "/work",
@@ -121,9 +124,11 @@
             >
           </li>
         </ul>
+        
       </nav>
     </div>
   </div>
+  {/if}
 </main>
 
 <Router
@@ -132,7 +137,10 @@
     "/about": About,
     "/projects": Projects,
     "/work": Work,
+    "/projects/rocketlaunch": Rocketlanch,
   }}
+  on:routeLoading={routeLoading}
+  on:routeLoaded={routeLoaded}
 />
 
 <style>

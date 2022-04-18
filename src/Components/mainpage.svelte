@@ -15,7 +15,7 @@
 
   <div class="sub">
   <h1>Hi, I am Slava</h1>
-  <p >And I am updating this website<br>as fast as it's possible <br><br> 🤡🤡🤡</p>
+  <p >And I am updating this website<br>as fast as possible <br><br> 🤡🤡🤡</p>
   </div>
   
 </div>
