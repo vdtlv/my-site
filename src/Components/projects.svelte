@@ -20,25 +20,25 @@
 <div class="projectlist" in:fly={{ y: 20, duration: 200, delay: 200 }}
 out:fade={{ duration: 200 }}>
 <a href="https://vdtlv.notion.site/Educt-co-founder-1800b5fd8ead4e17a6f37a7b2470e69d" target="_blank" class="project" >
-  <img src="Images/educt.png" alt="just educt logo" use:lazyImage={{ threshold: 0.5 }}>
+  <img src="Images/educt.png" data-src="Images/educt.png" alt="just educt logo" use:lazyImage={{ threshold: 0.5 }}>
   <h6>Educt</h6>
 </a>
 
 <a href="https://vdtlv.notion.site/Phase-10-student-project-5584573a3177445ba2b402a60f0d6f99" target="_blank" class="project" >
-  <img src="Images/phase.png" alt="phase 10 with wired font" use:lazyImage={{ threshold: 0.5 }}>
+  <img src="Images/phase.png" data-src="Images/phase.png" alt="phase 10 with wired font" use:lazyImage={{ threshold: 0.5 }}>
   <h6 >Phase 10</h6>
 </a>
   
 
 
   <a href="https://vdtlv.notion.site/ePost-Diploma-project-22b01964f80c424ca83e8d097d0ffdb6" target="_blank" class="project" >
-    <img src="Images/epost.gif" alt="cool animation representing main feature of epost" use:lazyImage={{ threshold: 0.5 }}>
+    <img src="Images/epost.gif" data-src="Images/epost.gif" alt="cool animation representing main feature of epost" use:lazyImage={{ threshold: 0.5 }}>
     <h6 >ePost</h6>
   </a>
 
   <!-- svelte-ignore a11y-missing-attribute -->
   <a class="project" on:click="{() => showModal = true}">
-    <img src="Images/rocketlaunch.png" alt="rocket" use:lazyImage={{ threshold: 0.5 }}>
+    <img src="Images/rocketlaunch.png" data-src="Images/rocketlaunch.png" alt="rocket" use:lazyImage={{ threshold: 0.5 }}>
     <h6 >rocketlaunch.live</h6>
   </a>
 
