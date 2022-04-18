@@ -42,13 +42,13 @@
       I enjoy working on design systems, develop and improve them. 
       Figma, Blender and Procreate are exceptional until you get 
       unexpected challenges. I am trying to bypass Adobe tools 
-      and this is the reason I always searching for new powerful 
+      and this is the reason I am always searching for new powerful 
       services which can close all my needs. There are so many 
       great tools for interface design or 2D/3D graphics.</p>
     <h3><br>Code</h3>
     <p>I am keen on programming, web things are pretty ok for me, 
       <i>especially, with YouTube and StackOverflow</i>. I 
-      develop simple web services for my daily routine but I still working
+      develop simple web services for my daily routine but still working
       on my skills for making things that need to reach a wide audience.
       As for today, I like playing with Svelte and trying to learn Swift.</p>
   </div>

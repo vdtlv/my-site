@@ -1,6 +1,6 @@
 <script>
   import { fade, fly } from "svelte/transition";
-  import Modal from './Modal.svelte';
+  import Modal from './modal.svelte';
   import { useLazyImage as lazyImage } from 'svelte-lazy-image';
 
   let showModal = false;
