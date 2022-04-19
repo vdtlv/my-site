@@ -38,7 +38,7 @@ out:fade={{ duration: 200 }}>
 
   <!-- svelte-ignore a11y-missing-attribute -->
   <a class="project" on:click="{() => showModal = true}">
-    <img src="Images/rocketlaunch.png" data-src="Images/rocketlaunch.png" alt="rocket" use:lazyImage={{ threshold: 0.5 }}>
+    <img src="Images/rocketlaunch.gif" data-src="Images/rocketlaunch.gif" alt="rocket" use:lazyImage={{ threshold: 0.5 }}>
     <h6 >rocketlaunch.live</h6>
   </a>
 
