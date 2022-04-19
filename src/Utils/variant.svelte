@@ -2,6 +2,9 @@
 	import { createEventDispatcher, onDestroy } from 'svelte';
 	import { fade, fly } from "svelte/transition";
 
+	export let link;
+    export let text;
+
 	const dispatch = createEventDispatcher();
 	const close = () => dispatch('close');
 
@@ -30,10 +33,13 @@ out:fade={{ duration: 200, delay: 100 }} ></div>
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal} in:fly={{ y: 100, duration: 200, delay: 100 }}
 out:fly={{y: 100, duration: 200 }}>
-	<slot name="header" ></slot>
+	<slot name="header"></slot>
 
+	<div class="pip">
+	<a href="{link}">{text}</a>
 	<!-- svelte-ignore a11y-autofocus -->
-	<button autofocus on:click={close}>That's ok, no problem</button>
+	<button on:click={close}>Cancel</button>
+</div>
 </div>
 
 <style>
@@ -49,8 +55,8 @@ out:fly={{y: 100, duration: 200 }}>
 	.modal {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		justify-content: left;
+		align-items: left;
 		padding: 16px;
 		overflow: hidden;
 		position: fixed;
@@ -60,12 +66,18 @@ out:fly={{y: 100, duration: 200 }}>
 		height: min-content;
 		border-radius: 32px 32px 0 0;
 		background: white;
-		text-align: center;
+		text-align: left;
+	}
+
+	.pip {
+		display: flex;
+		flex-direction: row;
+		gap: 16px;
 	}
 
 	button {
     display: block;
-	width: 260px;
+	width: fit-content;
     background-color: #f2f2f2;
     border: none;
     border-radius: 4px;
@@ -83,10 +95,31 @@ out:fly={{y: 100, duration: 200 }}>
       transition: background-color 0.3s;
     }
 
+	a {
+    background-color: #222;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 8px 0px;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  a:hover{
+      text-decoration: none;
+      background-color: #333333;
+      transition: background-color 0.3s;
+    }
+
 	@media (max-width: 600px) {
 		button {width: 100%;}
-		.modal {
-			text-align: left;
-		}
+		a {width: calc(100%-32px);}
+		.pip {
+		display: flex;
+		flex-direction: column;
+		gap: 0px;
+	}
 	}
 </style>

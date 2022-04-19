@@ -38,6 +38,7 @@ i{
 }
 .container {
     height: 180px;
+	width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

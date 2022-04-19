@@ -1,20 +1,29 @@
 <script>
     import Modal from '../Utils/modal.svelte';
+    import Variant from '../Utils/variant.svelte';
     let showModal = false;
+    let showVariant = false;
 
     export let title;
     export let imgLink;
     export let altText;
     export let link;
     export let teaser;
-  </script>
+</script>
 
 {#if teaser}
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a on:click={() => showModal = true}>
+    {#if teaser == 2}
+    <a on:click={() => showVariant = true}>
         <img src={imgLink} data-src={imgLink} alt={altText} >
         <h6 >{title}</h6>
     </a> 
+    {:else}
+    <a on:click={() => showModal = true}>
+      <img src={imgLink} data-src={imgLink} alt={altText} >
+      <h6 >{title}</h6>
+  </a>
+    {/if}
 {:else}
     <a href={link}>
         <img src={imgLink} data-src={imgLink} alt={altText} >
@@ -25,10 +34,23 @@
 
 {#if showModal}
 	<Modal on:close="{() => showModal = false}">
-		<h2 slot="header">
-			Page will be updated later, I&nbsp;promise
+		<h2 slot="header" >
+			Page will be updated later
 		</h2>
 	</Modal>
+{/if}
+
+{#if showVariant}
+	<Variant on:close="{() => showVariant = false}" text={"Go to Notion page"} link={link}>
+    <div slot="header">
+		<h2>
+			Page will be updated soon
+		</h2>
+    <p>
+      Find out more about {title} in my Notion. Some notes, reneders, images and Figma files.
+    </p>
+  </div>
+	</Variant>
 {/if}
 
 
