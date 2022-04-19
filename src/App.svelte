@@ -1,5 +1,6 @@
 <script lang="ts">
   import Router, { location, link } from "svelte-spa-router";
+  import { fade, fly } from "svelte/transition";
   import active from "svelte-spa-router/active";
   import Main from "./Components/mainpage.svelte";
   import About from "./Components/about.svelte";
@@ -67,7 +68,8 @@ function routeLoaded(event) {
 
 </script>
 
-<main>
+<main   in:fly={{ y: 20, duration: 200, delay: 200 }}
+out:fade={{ duration: 100 }}>
   {#if $location === "/" || $location === "/about" || $location === "/projects" || $location === "/work"}
   <div class="container">
     <div class="item title">VDTLV</div>
@@ -141,6 +143,7 @@ function routeLoaded(event) {
   }}
   on:routeLoading={routeLoading}
   on:routeLoaded={routeLoaded}
+  restoreScrollState={true}
 />
 
 <style>
