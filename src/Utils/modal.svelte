@@ -49,8 +49,8 @@ out:fly={{y: 100, duration: 200 }}>
 	.modal {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		justify-content: left;
+		align-items: left;
 		padding: 16px;
 		overflow: hidden;
 		position: fixed;
@@ -60,7 +60,7 @@ out:fly={{y: 100, duration: 200 }}>
 		height: min-content;
 		border-radius: 32px 32px 0 0;
 		background: white;
-		text-align: center;
+		text-align: left;
 	}
 
 	button {

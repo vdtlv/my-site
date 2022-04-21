@@ -7,7 +7,7 @@
   import Projects from "./Components/projects.svelte";
   import Work from "./Components/work.svelte";
   import url from "./url";
-import Rocketlanch from "./Components/rocketlanch.svelte";
+  import Rocketlanch from "./Components/Projects/rocketlaunch.svelte";
 
 function routeLoading(event) {
     console.log('routeLoading event')
