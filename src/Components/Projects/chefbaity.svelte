@@ -12,15 +12,17 @@
 
 
 <a href="/#/projects" class="auf {y ? 'x' : ''}"> ← Back to all projects</a>
+
 <main in:fly={{ y: 100, duration: 100, delay: 300 }}
 out:fade={{ duration: 200 }}> 
 
 <div class="container">
     <div class="item title">
-		  <i>from sometimes </i><br>testpage
+		  <i>from March 2021</i><br>Chef Baity
     </div>
     <div class="item">
-      testing tilt.
+      Developed food deliver service. 
+      <a href="https://vdtlv.notion.site/Food-delivery-service-Chef-Baity-e7252d8c95f74f4fadf4ab788e96eddf">Read more at Notion →</a>
 	  </div>
 </div>
 
@@ -36,6 +38,26 @@ out:fade={{ duration: 200 }}>
 
 
 <style>
+
+  .item > a {
+    z-index: 0;
+    display: block;
+    background-color: none;
+    border: none;
+    border-radius: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    background-color: white;
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: left;
+  }
+
+  .item > a:hover {
+    background-color: white;
+    text-decoration: underline;
+  }
 
   .meme{
     height: auto;

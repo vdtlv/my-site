@@ -29,7 +29,7 @@
       title: "ChefBaity",
       imgLink: "Images/chefbaity.png",
       altText: "ChafBaity logo app",
-      link: "https://vdtlv.notion.site/Food-delivery-service-Chef-Baity-e7252d8c95f74f4fadf4ab788e96eddf",
+      link: "/#/projects/chefbaity",
       teaser: 2,
     },
     {
