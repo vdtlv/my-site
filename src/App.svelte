@@ -6,8 +6,9 @@
   import About from "./Components/about.svelte";
   import Projects from "./Components/projects.svelte";
   import Work from "./Components/work.svelte";
-  import url from "./url";
+  import url from "./Utils/url";
   import Rocketlanch from "./Components/Projects/rocketlaunch.svelte";
+  import FishAndRice from "./Components/Projects/fishandrice.svelte";
 
 function routeLoading(event) {
     console.log('routeLoading event')
@@ -40,25 +41,21 @@ function routeLoaded(event) {
     console.log('Component', event.detail.component) // This is a Svelte component, so a function
     console.log('Name', event.detail.name)
       if ($url.hash === "#/about") {
-        console.log(" about", $location, $url.hash);
         window.document.body.classList.remove("home");
         window.document.body.classList.remove("projects");
         window.document.body.classList.remove("work");
         window.document.body.classList.add("about");
       } else if ($url.hash === "#/projects") {
-        console.log("projects", $location, $url.hash);
         window.document.body.classList.remove("home");
         window.document.body.classList.remove("about");
         window.document.body.classList.remove("work");
         window.document.body.classList.add("projects");
       } else if ($url.hash === "#/work") {
-        console.log("work", $location, $url.hash);
         window.document.body.classList.remove("home");
         window.document.body.classList.remove("about");
         window.document.body.classList.remove("projects");
         window.document.body.classList.add("work");
       } else {
-        console.log("not about", $location, $url.hash);
         window.document.body.classList.add("home");
         window.document.body.classList.remove("about");
         window.document.body.classList.remove("projects");
@@ -140,6 +137,7 @@ out:fade={{ duration: 100 }}>
     "/projects": Projects,
     "/work": Work,
     "/projects/rocketlaunch": Rocketlanch,
+    "/projects/fishandrice": FishAndRice,
   }}
   on:routeLoading={routeLoading}
   on:routeLoaded={routeLoaded}

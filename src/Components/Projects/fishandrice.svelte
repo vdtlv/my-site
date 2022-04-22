@@ -1,4 +1,7 @@
 <script>
+  import tilt from '../../Utils/tilt.js';
+  
+
 	import { fade, fly } from "svelte/transition";
 	let y;
 	$: x = y;
@@ -14,21 +17,50 @@ out:fade={{ duration: 200 }}>
 
 <div class="container">
     <div class="item title">
-		<i>from April 2020 </i><br>rocketlanch.live<br></div>
-    <div class="item">Redesing of webpage for&nbsp;rocket launch tracker.
-	</div>
+		  <i>from sometimes </i><br>testpage
+    </div>
+    <div class="item">
+      testing tilt.
+	  </div>
 </div>
 
-<img class:y src="Images/1.png" data-src="Images/1.png" alt="mockup">
+<div data-tilt use:tilt={{ scale: 1.2 }} class="meme">
 
-{#if innerWidth < 930}
-<a href="/#/projects"> ← Back to all projects</a>
-{/if}
+  <img src="Images/r2.png" width="150px" alt="test">
+	<h3>ChefBaity</h3>
+</div>
+
 </main>
 
 
 
+
 <style>
+
+  .meme{
+    height: auto;
+		width: auto;
+    padding: 32px 64px;
+    border-radius: 32px;
+		background: linear-gradient(45deg, #ffd6d6, #fae3e3);
+		color: white;
+		
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+
+    transform-style: preserve-3d;
+    
+  }
+
+  .meme > h3 {
+    transform: translateZ(5px);
+    box-shadow: #ffd6d6;
+  }
+  .meme > img {
+    transform: translateZ(30px);
+  }
 
 i{
 	font-style: normal;
@@ -55,15 +87,6 @@ i{
 	color: var(--text-color);
     font-weight: bold;
   }
-
-	img{
-		width: 100%;
-		height: 100%;
-		border-radius: 16px;
-		box-shadow: 0px 0px 56px 16px rgba(0, 0, 0, 0.05);
-		transition: 0.7s;
-		margin-bottom: 500px;
-	}
 
 	.auf {
 		position: fixed;
@@ -101,13 +124,6 @@ i{
 	padding-bottom: 32px;
   }
 
-  @media (min-width: 930px) {
-	.y{
-		box-shadow: 0px 0px 72px 16px rgba(0, 0, 0, 0.15);
-		transition: 0.7s;
-    	transform: scale(1.2) translate(0, 150px);
-	}
-  }
 
   @media (max-width: 930px) {
     a { 
@@ -123,9 +139,6 @@ i{
     flex-direction: column;
     align-items: baseline;
     align-content: left;
-  }
-  img {
-	margin-bottom: 20px;
   }
   .item {
 	width: 100%;
@@ -147,10 +160,4 @@ i{
 
   }
 
-  @media (max-width: 700px) {
-	  img {
-		width: 100vw;
-		border-radius: 8px 8px 0 0;
-	  }
-  }
 </style>
