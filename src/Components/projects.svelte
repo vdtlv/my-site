@@ -30,7 +30,7 @@
       imgLink: "Images/chefbaity.png",
       altText: "ChafBaity logo app",
       link: "/#/projects/chefbaity",
-      teaser: 2,
+      teaser: 0,
     },
     {
       title: "rocketlaunch.live",
