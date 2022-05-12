@@ -1,11 +1,12 @@
 <script>
-  import tilt from '../../Utils/tilt.js';
+  //import tilt from '../../Utils/tilt.js';
   
 
 	import { fade, fly } from "svelte/transition";
 	let y;
 	$: x = y;
 	$: innerWidth = 0
+  let reverse = false;
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerWidth/>
@@ -21,69 +22,39 @@ out:fade={{ duration: 200 }}>
 		  <i>from March 2021</i><br>Chef Baity
     </div>
     <div class="item">
-      Developed food deliver service. 
-      <a href="https://vdtlv.notion.site/Food-delivery-service-Chef-Baity-e7252d8c95f74f4fadf4ab788e96eddf">Read more at Notion →</a>
+      My first job as a designer and developed (a little bit) at&nbsp;food deliver service.
 	  </div>
 </div>
 
-<div data-tilt use:tilt={{ scale: 1.2 }} class="meme">
+	<h2>Branding and communication</h2>
+  <p>Chef Baity is a foodtech startup, the main idea is to provide prepared ingrdients to make cooking as simple as possible. Also, developed website and application layout.</p> 
+  <a tabrget="_blank" href="Https://chefbaity.ru">Visit website →</a>
 
-  <img src="Images/r2.png" width="150px" alt="test">
-	<h3>ChefBaity</h3>
-</div>
-
+  <img src="Images/cb-brandbook.png" data-src="Images/cb-brandbook.png" alt="Chef Baity Brandbook">
+  {y}
+  <img src="Images/cb-printedmaterials.png" data-src="Images/cb-printedmaterials.png" alt="Chef Baity Printed Materials">
+  <p>Wow, seems this page is in progerss</p>
+  {#if innerWidth < 930}
+<a class="a" style="margin-bottom: 40px;" href="/#/projects"> ← Back to all projects</a>
+{/if}
 </main>
 
 
 
 
 <style>
-
-  .item > a {
-    z-index: 0;
-    display: block;
-    background-color: none;
-    border: none;
-    border-radius: none;
-    padding: 0;
-    margin: 0;
-    font-weight: 400;
-    background-color: white;
-    text-decoration: none;
+  img {
+    margin: 40px 0 40px 0;
+    width: 100vw;
+    align-self: center;
+  }
+  h2{
+    font-size: 32px;
+  }
+  a {
     color: var(--text-color);
-    text-align: left;
+    font-weight:700;
   }
-
-  .item > a:hover {
-    background-color: white;
-    text-decoration: underline;
-  }
-
-  .meme{
-    height: auto;
-		width: auto;
-    padding: 32px 64px;
-    border-radius: 32px;
-		background: linear-gradient(45deg, #ffd6d6, #fae3e3);
-		color: white;
-		
-		display: grid;
-		justify-content: center;
-		align-content: center;
-		text-align: center;
-
-    transform-style: preserve-3d;
-    
-  }
-
-  .meme > h3 {
-    transform: translateZ(5px);
-    box-shadow: #ffd6d6;
-  }
-  .meme > img {
-    transform: translateZ(30px);
-  }
-
 i{
 	font-style: normal;
 	font-weight: normal;
@@ -114,9 +85,7 @@ i{
 		position: fixed;
 		top: 16px;
 		left: 16px;
-	}
-	a {
-	z-index: 100;
+    z-index: 100;
     display: block;
     background-color: var(--hover);
 	max-height: fit-content;
@@ -129,8 +98,23 @@ i{
     color: var(--text-color);
     transition: background-color 0.3s;
     text-align: center;
+	}
+
+  .a{
+    background-color: var(--hover);
+	max-height: fit-content;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 8px 0px;
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+    text-align: center;
   }
-  a:hover{
+
+  .auf:hover{
       text-decoration: none;
       background-color: #e9e9e9;
       transition: background-color 0.3s;
@@ -142,13 +126,13 @@ i{
 	max-width: 800px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 	padding-bottom: 32px;
   }
 
 
   @media (max-width: 930px) {
-    a { 
+    .auf { 
       width: fit-content;
     }
     main {
@@ -175,10 +159,12 @@ i{
 		bottom: 16px;
 		transition: 0.7s;
 	}
-	.x{
+
+  .x{
     	transform: translate(0px, 100px);
 		transition: 0.7s;
 	}
+
 
   }
 

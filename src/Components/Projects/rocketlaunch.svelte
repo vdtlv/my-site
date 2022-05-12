@@ -1,7 +1,6 @@
 <script>
 	import { fade, fly } from "svelte/transition";
 	let y;
-	$: x = y;
 	$: innerWidth = 0
 </script>
 
