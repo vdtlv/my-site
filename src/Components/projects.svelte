@@ -16,7 +16,7 @@
       imgLink: "Images/phase.png",
       altText: "phase 10 with wired font",
       link: "https://vdtlv.notion.site/Phase-10-student-project-5584573a3177445ba2b402a60f0d6f99",
-      teaser: 1,
+      teaser: 2,
     },
     {
       title: "ePost",

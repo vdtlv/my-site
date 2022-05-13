@@ -28,18 +28,24 @@ out:fade={{ duration: 200 }}>
       My first job as a designer and developed (a little bit) at&nbsp;food deliver service.
 	  </div>
   </div>
-	<h2>Branding and communication</h2>
+	<h2>Branding, website and&nbsp;application</h2>
   <p>Chef Baity is a foodtech startup, the main idea is to provide prepared ingrdients to make cooking as simple as possible. Also, developed website and application layout.</p> 
   <a tabrget="_blank" href="Https://chefbaity.ru">Visit website →</a>
 </div>
-  <IntersectionObserver let:intersecting top={-40} bottom={-40}>
+  <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
   <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-brandbook.png" data-src="Images/cb-brandbook.png" alt="Chef Baity Brandbook">
   </IntersectionObserver>
-  <IntersectionObserver let:intersecting top={-40} bottom={-40}>
+  <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
   <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-printedmaterials.png" data-src="Images/cb-printedmaterials.png" alt="Chef Baity Printed Materials">
   </IntersectionObserver>
+  <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
+    <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-web.png" data-src="Images/cb-web.png" alt="Chef Baity Website">
+    </IntersectionObserver>
+    <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
+      <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-app.png" data-src="Images/cb-app.png" alt="Chef Baity Application">
+      </IntersectionObserver>
   <div class="main">
-    <p>Wow, seems this page is in progerss</p>
+    <!--<p>Wow, seems this page is in progerss</p>-->
     {#if innerWidth < 930}
       <a class="a" style="margin-bottom: 40px;" href="/#/projects"> ← Back to all projects</a>
     {/if}
@@ -55,6 +61,7 @@ out:fade={{ duration: 200 }}>
     width: 100%;
     align-self: center;
     margin-bottom:5% ;
+    border-radius: 8px;
   }
 
   .y {
@@ -167,6 +174,7 @@ i{
       width: fit-content;
     }
     main {
+      padding: 0 1em;
       max-width: 100vw;
       display: flex;
     flex-direction: column;
