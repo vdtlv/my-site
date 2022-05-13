@@ -60,8 +60,10 @@ out:fade={{ duration: 200 }}>
   img {
     width: 100%;
     align-self: center;
-    margin-bottom:5% ;
+    margin-bottom: 20px;
     border-radius: 8px;
+    max-width: 1400px;
+
   }
 
   .y {
@@ -155,6 +157,7 @@ i{
     margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
 	  padding-bottom: 32px;
     overflow-y: hidden;
   }
@@ -177,11 +180,13 @@ i{
       padding: 0 1em;
       max-width: 100vw;
       display: flex;
-    flex-direction: column;
+      flex-direction: column;
     }
     img {
-    width: 100%;
+    margin-left: -16px;
+    width: 100vw;
     align-self: center;
+    margin-bottom:5%;
   }
 	.container {
 	height: fit-content;

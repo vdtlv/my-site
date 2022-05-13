@@ -19,6 +19,13 @@
       teaser: 2,
     },
     {
+      title: "Fish & Rice",
+      imgLink: "Images/fnr.png",
+      altText: "Fish and Rice logo",
+      link: "https://vdtlv.notion.site/Fish-Rice-aefff516d966442db9aadbf56d4e977d",
+      teaser: 2,
+    },
+    {
       title: "ePost",
       imgLink: "Images/epost.gif",
       altText: "cool animation representing main feature of epost",
@@ -66,10 +73,10 @@ out:fade={{ duration: 100 }}>
     margin: 0 16px;
   }
 
-  /* pseudo class for alignement last row */
+  /* pseudo class for alignement last row 
   .projectlist::after {
   content: "";
   flex: auto;
-  }
+  }*/
 
 </style>
