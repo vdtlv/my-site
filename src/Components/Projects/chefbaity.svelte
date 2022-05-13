@@ -1,5 +1,6 @@
 <script>
   //import tilt from '../../Utils/tilt.js';
+  import IntersectionObserver from '../../Utils/intersectionobserver.svelte';
   
 
 	import { fade, fly } from "svelte/transition";
@@ -7,6 +8,7 @@
 	$: x = y;
 	$: innerWidth = 0
   let reverse = false;
+  //let tp = document.getElementById('kk').getBoundingClientRect().top
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerWidth/>
@@ -17,37 +19,57 @@
 <main in:fly={{ y: 100, duration: 100, delay: 300 }}
 out:fade={{ duration: 200 }}> 
 
-<div class="container">
+<div class="main"> 
+  <div class="container">
     <div class="item title">
 		  <i>from March 2021</i><br>Chef Baity
     </div>
     <div class="item">
       My first job as a designer and developed (a little bit) at&nbsp;food deliver service.
 	  </div>
-</div>
-
+  </div>
 	<h2>Branding and communication</h2>
   <p>Chef Baity is a foodtech startup, the main idea is to provide prepared ingrdients to make cooking as simple as possible. Also, developed website and application layout.</p> 
   <a tabrget="_blank" href="Https://chefbaity.ru">Visit website →</a>
-
-  <img src="Images/cb-brandbook.png" data-src="Images/cb-brandbook.png" alt="Chef Baity Brandbook">
-  {y}
-  <img src="Images/cb-printedmaterials.png" data-src="Images/cb-printedmaterials.png" alt="Chef Baity Printed Materials">
-  <p>Wow, seems this page is in progerss</p>
-  {#if innerWidth < 930}
-<a class="a" style="margin-bottom: 40px;" href="/#/projects"> ← Back to all projects</a>
-{/if}
+</div>
+  <IntersectionObserver let:intersecting top={-40} bottom={-40}>
+  <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-brandbook.png" data-src="Images/cb-brandbook.png" alt="Chef Baity Brandbook">
+  </IntersectionObserver>
+  <IntersectionObserver let:intersecting top={-40} bottom={-40}>
+  <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-printedmaterials.png" data-src="Images/cb-printedmaterials.png" alt="Chef Baity Printed Materials">
+  </IntersectionObserver>
+  <div class="main">
+    <p>Wow, seems this page is in progerss</p>
+    {#if innerWidth < 930}
+      <a class="a" style="margin-bottom: 40px;" href="/#/projects"> ← Back to all projects</a>
+    {/if}
+  </div>
 </main>
 
 
 
 
 <style>
+
   img {
-    margin: 40px 0 40px 0;
-    width: 100vw;
+    width: 100%;
     align-self: center;
+    margin-bottom:5% ;
   }
+
+  .y {
+    scale: 1;
+    opacity: 1;
+    transition: 1s ease-out;
+  }
+
+
+  .n {
+    scale: 0.9;
+    opacity: 0.3;
+    transition: 1s ease-in;
+  }
+
   h2{
     font-size: 32px;
   }
@@ -63,7 +85,7 @@ i{
 }
 .container {
     height: 180px;
-	width: 100%;
+    	width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -87,7 +109,7 @@ i{
 		left: 16px;
     z-index: 100;
     display: block;
-    background-color: var(--hover);
+      background-color: var(--hover);
 	max-height: fit-content;
     border: none;
     border-radius: 4px;
@@ -102,7 +124,8 @@ i{
 
   .a{
     background-color: var(--hover);
-	max-height: fit-content;
+	  max-height: fit-content;
+    width: auto;
     border: none;
     border-radius: 4px;
     padding: 14px 16px;
@@ -120,14 +143,22 @@ i{
       transition: background-color 0.3s;
     }
   
-  main {
-    padding: 0px 1em;
-    margin: 0 auto;
-	max-width: 800px;
+  main{
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
+	  padding-bottom: 32px;
+    overflow-y: hidden;
+  }
+  .main {
 
-	padding-bottom: 32px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+	  padding-bottom: 32px;
+	  max-width: 800px;
+    padding-bottom: 32px;
   }
 
 
@@ -136,8 +167,14 @@ i{
       width: fit-content;
     }
     main {
-      max-width: 100%;
+      max-width: 100vw;
+      display: flex;
+    flex-direction: column;
     }
+    img {
+    width: 100%;
+    align-self: center;
+  }
 	.container {
 	height: fit-content;
     margin: 30px 0;
@@ -165,7 +202,9 @@ i{
 		transition: 0.7s;
 	}
 
-
+  .a{
+    align-self: center;
+  }
   }
 
 </style>
