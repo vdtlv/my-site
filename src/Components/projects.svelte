@@ -29,8 +29,8 @@
       title: "ePost",
       imgLink: "Images/epost.gif",
       altText: "cool animation representing main feature of epost",
-      link: "https://vdtlv.notion.site/ePost-Diploma-project-22b01964f80c424ca83e8d097d0ffdb6",
-      teaser: 2,
+      link: "/#/projects/epost",
+      teaser: 0,
     },
     {
       title: "ChefBaity",

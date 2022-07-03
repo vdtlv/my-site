@@ -39,11 +39,17 @@ out:fade={{ duration: 200 }}>
   <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-printedmaterials.png" data-src="Images/cb-printedmaterials.png" alt="Chef Baity Printed Materials">
   </IntersectionObserver>
   <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
+    <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-presentations.jpg" data-src="Images/cb-presentations.jpg" alt="Chef Baity presentations">
+    </IntersectionObserver>
+  <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
+    <img class="{intersecting ? 'y' : 'n'} gradient" src="Images/cb-labels-d.jpg" data-src="Images/cb-labels-d.jpg" alt="Chef Baity Labels">
+  </IntersectionObserver>
+  <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
     <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-web.png" data-src="Images/cb-web.png" alt="Chef Baity Website">
     </IntersectionObserver>
     <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
       <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-app.png" data-src="Images/cb-app.png" alt="Chef Baity Application">
-      </IntersectionObserver>
+    </IntersectionObserver>
   <div class="main">
     <!--<p>Wow, seems this page is in progerss</p>-->
     {#if innerWidth < 930}
@@ -77,6 +83,10 @@ out:fade={{ duration: 200 }}>
     scale: 0.9;
     opacity: 0.3;
     transition: 1s ease-in;
+  }
+
+  .gradient {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
   }
 
   h2{

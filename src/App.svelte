@@ -8,8 +8,8 @@
   import Work from "./Components/work.svelte";
   import url from "./Utils/url";
   import Rocketlanch from "./Components/Projects/rocketlaunch.svelte";
-  import ChefBaity from "./Components/Projects/chefbaity.svelte";
-import Chefbaity from "./Components/Projects/chefbaity.svelte";
+  import Chefbaity from "./Components/Projects/chefbaity.svelte";
+  import Epost from "./Components/Projects/epost.svelte";
 
 function routeLoading(event) {
     console.log('routeLoading event')
@@ -139,6 +139,7 @@ out:fade={{ duration: 100 }}>
     "/work": Work,
     "/projects/rocketlaunch": Rocketlanch,
     "/projects/chefbaity": Chefbaity,
+    "/projects/epost": Epost,
   }}
   on:routeLoading={routeLoading}
   on:routeLoaded={routeLoaded}
