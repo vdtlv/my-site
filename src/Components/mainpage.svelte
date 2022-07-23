@@ -92,7 +92,7 @@
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;*/
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url("../images/links.jpg");
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url("../Images/links.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -104,7 +104,7 @@
     grid-column-end: span 2;
     grid-row-start: 1;
     grid-row-end: span 1;*/
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url("../images/imgs.jpg");
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url("../Images/imgs.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
