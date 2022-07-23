@@ -64,7 +64,13 @@
       max-width: 1400px;
   
     }
-  
+    
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
     .y {
       scale: 1;
       opacity: 1;
@@ -196,6 +202,10 @@
       flex-direction: column;
       align-items: baseline;
       align-content: left;
+    }
+
+    .buttons {
+      flex-direction: column;
     }
     .item {
       width: 100%;
