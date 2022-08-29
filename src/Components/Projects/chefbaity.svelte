@@ -29,7 +29,7 @@ out:fade={{ duration: 200 }}>
 	  </div>
   </div>
 	<h2>Branding, website and&nbsp;application</h2>
-  <p>Chef Baity is a foodtech startup, the main idea is to provide prepared ingrdients to make cooking as simple as possible. Also, developed website and application layout.</p> 
+  <p>Chef Baity is&nbsp;a&nbsp;foodtech startup, the main idea is&nbsp;to&nbsp;provide prepared ingrdients to&nbsp;make cooking as&nbsp;simple as&nbsp;possible. I&nbsp;was working on&nbsp;the development of&nbsp;this food delivery service: prepared all design assets for branding&nbsp;&mdash; which turned into a&nbsp;real brand book, which still helps to&nbsp;work with printing materials and social media. Developed presentations for investors, etc.</p> 
   <a tabrget="_blank" href="Https://chefbaity.ru">Visit website →</a>
 </div>
   <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
@@ -44,6 +44,14 @@ out:fade={{ duration: 200 }}>
   <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
     <img class="{intersecting ? 'y' : 'n'} gradient" src="Images/cb-labels-d.jpg" data-src="Images/cb-labels-d.jpg" alt="Chef Baity Labels">
   </IntersectionObserver>
+  <div class="main">
+  <p>
+    Developed website with Tilda CMS&nbsp;&mdash; this is&nbsp;the easiest way to&nbsp;make A/B tests with landing pages. Set up&nbsp;Bitrix CRM and worked on&nbsp;technical requirements for deep integrations to&nbsp;make clear tasks for purchasing manager and the kitchen. That approach allowed Chef Baity to&nbsp;spend &asymp;17% less money on&nbsp;each order.
+  </p>
+  <p>
+    Prepared designs for Chef Baity application. Started from job stories which turned into a&nbsp;significant and complicated user flow for MVP. Developed interactive prototype for stakeholders and finished with instructions and documentation for developers.
+  </p>
+</div>
   <IntersectionObserver let:intersecting top={((innerWidth > 930) ? "-40" : "-10")} bottom={((innerWidth > 930) ? "-40" : "-10")}>
     <img class="{intersecting ? 'y' : 'n'}" src="Images/cb-web.png" data-src="Images/cb-web.png" alt="Chef Baity Website">
     </IntersectionObserver>
@@ -187,14 +195,13 @@ i{
       width: fit-content;
     }
     main {
-      padding: 0 1em;
+      padding: 0 16px;
       max-width: 100vw;
       display: flex;
       flex-direction: column;
     }
     img {
-    margin-left: -16px;
-    width: 100vw;
+    width: 100%;
     align-self: center;
     margin-bottom:5%;
   }

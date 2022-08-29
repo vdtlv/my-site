@@ -99,7 +99,7 @@
 
   .craydle {
     width: 100%;
-
+    
     /*grid-column-start: 2;
     grid-column-end: span 2;
     grid-row-start: 1;
