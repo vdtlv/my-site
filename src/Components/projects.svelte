@@ -1,9 +1,15 @@
 <script>
   import { fade, fly } from "svelte/transition";
-
   import Project from "./project.svelte";
 
   let projects = [
+    {
+      title: "Right on Trek",
+      imgLink: "Images/rot.png",
+      altText: "just Right on Trek logo",
+      link: "",
+      teaser: 1,
+    },
     {
       title: "Educt",
       imgLink: "Images/educt.png",
@@ -11,13 +17,13 @@
       link: "https://vdtlv.notion.site/Educt-co-founder-1800b5fd8ead4e17a6f37a7b2470e69d",
       teaser: 2,
     },
-    {
+    /*{
       title: "Phase 10",
       imgLink: "Images/phase.png",
       altText: "phase 10 with wired font",
       link: "https://vdtlv.notion.site/Phase-10-student-project-5584573a3177445ba2b402a60f0d6f99",
       teaser: 2,
-    },
+    },*/
     {
       title: "Fish & Rice",
       imgLink: "Images/fnr.png",
@@ -77,6 +83,6 @@ out:fade={{ duration: 100 }}>
   .projectlist::after {
   content: "";
   flex: auto;
-  }*/
+  }
 
 </style>
