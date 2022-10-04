@@ -16,12 +16,12 @@
     {#if teaser == 2}
     <a on:click={() => showVariant = true}>
         <img src={imgLink} data-src={imgLink} alt={altText} >
-        <h6 >{title}</h6>
+        <h6 >{title} ⚙︎</h6>
     </a> 
     {:else}
     <a on:click={() => showModal = true}>
       <img src={imgLink} data-src={imgLink} alt={altText} >
-      <h6 >{title}</h6>
+      <h6 >{title} ⚙︎</h6>
   </a>
     {/if}
 {:else}
