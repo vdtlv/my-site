@@ -7,8 +7,8 @@
       title: "Right on Trek",
       imgLink: "Images/rot.png",
       altText: "just Right on Trek logo",
-      link: "",
-      teaser: 1,
+      link: "/#/projects/rightontrek",
+      teaser: 0,
     },
     {
       title: "Educt",

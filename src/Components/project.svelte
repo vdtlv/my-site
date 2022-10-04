@@ -57,12 +57,12 @@
 <style>
 
     
-      img {
-        -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     max-width: 100%;
     max-height: 100%;
     margin-bottom: 8px;

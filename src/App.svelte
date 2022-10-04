@@ -10,6 +10,7 @@
   import Rocketlanch from "./Components/Projects/rocketlaunch.svelte";
   import Chefbaity from "./Components/Projects/chefbaity.svelte";
   import Epost from "./Components/Projects/epost.svelte";
+  import RoT from "./Components/Projects/rightontrek.svelte";
 
 function routeLoading(event) {
     console.log('routeLoading event')
@@ -66,7 +67,7 @@ function routeLoaded(event) {
 
 </script>
 
-<main   in:fly={{ y: 20, duration: 200, delay: 200 }}
+<main   in:fly={{ y: 20, duration: 300, delay: 200 }}
 out:fade={{ duration: 100 }}>
   {#if $location === "/" || $location === "/about" || $location === "/projects" || $location === "/work"}
   <div class="container">
@@ -140,6 +141,7 @@ out:fade={{ duration: 100 }}>
     "/projects/rocketlaunch": Rocketlanch,
     "/projects/chefbaity": Chefbaity,
     "/projects/epost": Epost,
+    "/projects/rightontrek": RoT,
   }}
   on:routeLoading={routeLoading}
   on:routeLoaded={routeLoaded}

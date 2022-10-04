@@ -22,7 +22,7 @@ out:fade={{ duration: 200 }}>
 <div class="main"> 
   <div class="container">
     <div class="item title">
-		  <i>from March 2021</i><br>Chef Baity
+		  <i>Jul 2020 – Sep 2021</i><br>Chef Baity
     </div>
     <div class="item">
       My first job as a designer and developed (a little bit) at&nbsp;food deliver service.
