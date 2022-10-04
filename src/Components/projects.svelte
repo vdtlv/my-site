@@ -11,7 +11,7 @@
       teaser: 0,
     },
     {
-      title: "Educt",
+      title: "Educt ⚙︎",
       imgLink: "Images/educt.png",
       altText: "just educt logo",
       link: "https://vdtlv.notion.site/Educt-co-founder-1800b5fd8ead4e17a6f37a7b2470e69d",
@@ -25,7 +25,7 @@
       teaser: 2,
     },*/
     {
-      title: "Fish & Rice",
+      title: "Fish & Rice ⚙︎",
       imgLink: "Images/fnr.png",
       altText: "Fish and Rice logo",
       link: "https://vdtlv.notion.site/Fish-Rice-aefff516d966442db9aadbf56d4e977d",
