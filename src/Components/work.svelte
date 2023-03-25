@@ -1,18 +1,6 @@
 <script>
   import { fade, fly } from "svelte/transition";
 
-  let hoverlink = 0;
-
-  function handleMouseOver(e) {
-		hoverlink = 1;
-	}
-  function handleMouseOver2(e) {
-		hoverlink = 2;
-	}
-  function handleMouseOut(e) {
-		hoverlink = 0;
-	}
-
 </script>
 
 <div
@@ -20,15 +8,14 @@
   in:fly={{ y: 20, duration: 200, delay: 200 }}
   out:fade={{ duration: 200 }}
 >
-
+ 
+<h2>Since 2023 mentoring junior and middle designers at <a href="https://edutoria.gohelper.io">Helper</a> </h2>
+  <h2>At October 2022 become a Product Designer at <a href="https://fitmost.ru">Fitmost</a> </h2>
+  <h2>Worked at <a href="https://rightontrek.com">RightOnTrek</a> since September 2021 as UI/UX Designer</h2>
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-  <h2 class="{hoverlink != 0 ? 'hvr' : ''}">UI/UX Designer at <a class="{hoverlink == 1 ? 'hvr' : ''}" on:mouseover={handleMouseOver2} on:mouseout={handleMouseOut} href="https://rightontrek.com">RightOnTrek</a> since September 2021</h2>
-  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-  <h2 class="{hoverlink != 0 ? 'hvr' : ''}">Started <a class="{hoverlink == 2 ? 'hvr' : ''}" on:mouseover={handleMouseOver} on:mouseout={handleMouseOut}
-              href="https://educt.ru"> Educt</a> with&nbsp;my&nbsp;folks</h2>
-  <h2 class="{hoverlink != 0 ? 'hvr' : ''}">Graduated from ITMO&nbsp;University in 2021</h2>
-  <h2 class="{hoverlink != 0 ? 'hvr' : ''}">First experience in startup with a good team</h2>
-  <h2 class="{hoverlink != 0 ? 'hvr' : ''}">First part-time job at Hypefactory in 2019</h2>
+  <h2>Started <a href="https://educt.ru"> Educt</a> with&nbsp;my&nbsp;folks</h2>
+  <h2>Graduated from ITMO&nbsp;University in 2021</h2>
+  <h2>First experience in startup with a nice team</h2>
 </div>
 
 <style>
@@ -44,62 +31,25 @@
     color: var(--text-color);
     padding: 1em;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     max-width: 100%;
   }
 
   h2 {
     font-size: 2rem;
     transition: color 0.3s;
+    color: var(--default);
   }
 
-  .hvr {
-    color: var(--hover);
-    transition: color 0.3s;
-  }
-
-  a {
-    color: var(--text-color);
-    
-  }
-  a:hover {
-    transition: color 0.3s;
-    text-decoration: none;
-  }
-
-  @media (max-width: 1000px) {
-    .hvr {
-      color: var(--white);
-    }
     a {
-    color: var(--default);
-  }
-  a.hvr {
-    color: var(--default);
-  }
+    color: var(--text-color);
   }
 
 
   @media (min-width: 640px) {
+
     .main {
       max-width: 768px;
-      gap: 1em 84px;
-    }
-    .hvr {
-      color: var(--hover);
-      transition: color 0.3s;
-    }
-    h2 {
-      max-width: 320px;
-    }
-    a {
-      color: var(--text-color);
-    }
-    a:hover {
-      transition: color 0.3s;
-     text-decoration: none;
+      gap: 1em 40px;
     }
   }
 </style>

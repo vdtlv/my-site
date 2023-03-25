@@ -23,7 +23,7 @@
   </a>
 </div>
   <div class="sub">
-  <p>And I am updating this website<br>as fast as possible <br><br> 🤡🤡🤡</p>
+  <p>this page will be updated once <br><br> 🤡🤡🤡</p>
   </div>
   
 </div>
